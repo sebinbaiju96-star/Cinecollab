@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,9 @@
     <title>CineCollab - Malayalam Cinema Talent Hub</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #0f0f0f; color: #ffffff; }
+        body { background-color: #f4f7fb; color: #1e293b; }
 
-        /* --- 1. Welcome Screen Styles --- */
+        /* --- 1. Welcome Screen Styles (Blue & White) --- */
         #welcome-screen {
             min-height: 100vh;
             display: flex;
@@ -17,12 +18,12 @@
             align-items: center;
             text-align: center;
             padding: 25px;
-            background: radial-gradient(circle at center, #2b090c 0%, #0f0f0f 70%);
+            background: linear-gradient(135deg, #ffffff 0%, #e0ecff 100%);
         }
         .logo-badge {
-            background: rgba(229, 9, 20, 0.2);
-            color: #ff4d4d;
-            border: 1px solid #e50914;
+            background: #dbeafe;
+            color: #1d4ed8;
+            border: 1px solid #93c5fd;
             padding: 6px 16px;
             border-radius: 30px;
             font-size: 13px;
@@ -31,20 +32,21 @@
             margin-bottom: 20px;
             font-weight: bold;
         }
-        #welcome-screen h1 { font-size: 36px; margin-bottom: 15px; line-height: 1.2; }
-        #welcome-screen h1 span { color: #e50914; }
-        #welcome-screen p { font-size: 16px; color: #cccccc; max-width: 500px; line-height: 1.6; margin-bottom: 30px; }
+        #welcome-screen h1 { font-size: 36px; margin-bottom: 15px; line-height: 1.2; color: #0f172a; }
+        #welcome-screen h1 span { color: #2563eb; }
+        #welcome-screen p { font-size: 16px; color: #475569; max-width: 500px; line-height: 1.6; margin-bottom: 30px; }
         
         .roles-highlight {
             display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 35px; max-width: 450px;
         }
         .role-tag {
-            background: #1f1f1f; border: 1px solid #333; padding: 8px 14px; border-radius: 8px; font-size: 13px; color: #ffeb3b;
+            background: #ffffff; border: 1px solid #cbd5e1; padding: 8px 14px; border-radius: 8px;
+            font-size: 13px; color: #1e40af; font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.04);
         }
         .enter-btn {
-            background: linear-gradient(90deg, #e50914, #b81d24);
+            background: linear-gradient(90deg, #2563eb, #1d4ed8);
             color: white; border: none; padding: 15px 32px; font-size: 16px; font-weight: bold;
-            border-radius: 30px; cursor: pointer; box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+            border-radius: 30px; cursor: pointer; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
         /* --- 2. Registration Form Screen --- */
@@ -52,44 +54,46 @@
             display: none;
             min-height: 100vh;
             padding: 25px 15px;
-            background: #0f0f0f;
+            background: #f4f7fb;
             justify-content: center;
             align-items: center;
         }
         .form-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 16px;
             padding: 25px 20px;
             width: 100%;
             max-width: 450px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
         }
-        .form-card h2 { font-size: 22px; margin-bottom: 6px; color: #fff; text-align: center; }
-        .form-card p { font-size: 13px; color: #aaa; text-align: center; margin-bottom: 20px; }
+        .form-card h2 { font-size: 22px; margin-bottom: 6px; color: #0f172a; text-align: center; }
+        .form-card p { font-size: 13px; color: #64748b; text-align: center; margin-bottom: 20px; }
         .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-size: 13px; color: #ddd; margin-bottom: 6px; font-weight: bold; }
+        .form-group label { display: block; font-size: 13px; color: #334155; margin-bottom: 6px; font-weight: bold; }
         input, select, textarea {
-            width: 100%; padding: 12px; background: #262626; border: 1px solid #444;
-            color: #fff; border-radius: 8px; font-size: 14px; outline: none;
+            width: 100%; padding: 12px; background: #f8fafc; border: 1px solid #cbd5e1;
+            color: #0f172a; border-radius: 8px; font-size: 14px; outline: none;
         }
-        input:focus, select:focus, textarea:focus { border-color: #e50914; }
+        input:focus, select:focus, textarea:focus { border-color: #2563eb; background: #ffffff; }
         .submit-btn {
-            width: 100%; background: linear-gradient(90deg, #e50914, #b81d24);
+            width: 100%; background: linear-gradient(90deg, #2563eb, #1d4ed8);
             color: white; border: none; padding: 14px; font-size: 16px; font-weight: bold;
             border-radius: 8px; cursor: pointer; margin-top: 10px;
         }
-        .submit-btn:disabled { background: #555; cursor: not-allowed; }
+        .submit-btn:disabled { background: #94a3b8; cursor: not-allowed; }
         .skip-link {
-            display: block; text-align: center; margin-top: 15px; color: #888;
+            display: block; text-align: center; margin-top: 15px; color: #64748b;
             font-size: 13px; text-decoration: underline; cursor: pointer;
         }
 
         /* --- 3. Main App Styles --- */
         #main-app { display: none; padding-bottom: 50px; }
         header {
-            background: linear-gradient(90deg, #e50914, #b81d24);
+            background: linear-gradient(90deg, #2563eb, #1d4ed8);
+            color: #ffffff;
             padding: 18px; text-align: center; position: sticky; top: 0; z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         header h1 { font-size: 22px; margin-bottom: 4px; }
         header p { font-size: 12px; opacity: 0.9; }
@@ -97,21 +101,20 @@
         .container { padding: 15px; max-width: 600px; margin: auto; }
         
         .filters { display: flex; gap: 8px; overflow-x: auto; padding: 10px 0; margin-bottom: 15px; }
-        .filter-btn { background: #222; color: #fff; border: 1px solid #444; padding: 8px 15px; border-radius: 20px; cursor: pointer; white-space: nowrap; font-size: 13px; }
-        .filter-btn.active { background: #e50914; border-color: #e50914; font-weight: bold; }
+        .filter-btn { background: #ffffff; color: #334155; border: 1px solid #cbd5e1; padding: 8px 15px; border-radius: 20px; cursor: pointer; white-space: nowrap; font-size: 13px; }
+        .filter-btn.active { background: #2563eb; color: #ffffff; border-color: #2563eb; font-weight: bold; }
 
-        .section-title { font-size: 18px; margin: 15px 0 12px; border-left: 4px solid #e50914; padding-left: 10px; }
+        .section-title { font-size: 18px; margin: 15px 0 12px; border-left: 4px solid #2563eb; padding-left: 10px; color: #0f172a; }
 
-        .card { background: #1a1a1a; border-radius: 12px; padding: 16px; margin-bottom: 12px; border: 1px solid #2e2e2e; }
-        .role-badge { background: #2b2b2b; color: #ffeb3b; padding: 4px 10px; border-radius: 6px; font-size: 11px; display: inline-block; margin-bottom: 8px; font-weight: bold; }
-        .card h3 { font-size: 17px; margin-bottom: 6px; }
-        .card p { font-size: 13.5px; color: #bbb; margin-bottom: 10px; line-height: 1.5; }
-        .contact-info { font-size: 13px; color: #4caf50; margin-bottom: 12px; font-weight: bold; }
+        .card { background: #ffffff; border-radius: 12px; padding: 16px; margin-bottom: 12px; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .role-badge { background: #dbeafe; color: #1d4ed8; padding: 4px 10px; border-radius: 6px; font-size: 11px; display: inline-block; margin-bottom: 8px; font-weight: bold; }
+        .card h3 { font-size: 17px; margin-bottom: 6px; color: #0f172a; }
+        .card p { font-size: 13.5px; color: #475569; margin-bottom: 10px; line-height: 1.5; }
+        .contact-info { font-size: 13px; color: #2563eb; margin-bottom: 12px; font-weight: bold; word-break: break-all; }
         
         .btn-group { display: flex; gap: 10px; }
-        .btn { background: #e50914; color: white; border: none; padding: 9px 16px; border-radius: 6px; font-size: 13px; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; }
-        .btn-whatsapp { background: #25D366; color: #fff; }
-        .loading-text { text-align: center; color: #aaa; padding: 20px; font-size: 14px; }
+        .btn { background: #2563eb; color: white; border: none; padding: 9px 16px; border-radius: 6px; font-size: 13px; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; }
+        .loading-text { text-align: center; color: #64748b; padding: 20px; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -132,7 +135,7 @@
         <span class="role-tag">🎭 Actors</span>
     </div>
 
-    <p style="font-size: 14px; color: #aaa; margin-bottom: 20px;">
+    <p style="font-size: 14px; color: #64748b; margin-bottom: 20px;">
         Are you interested in joining our creative filmmaking community?
     </p>
 
@@ -164,8 +167,8 @@
         </div>
 
         <div class="form-group">
-            <label>Contact / WhatsApp Number *</label>
-            <input type="tel" id="reg-phone" placeholder="e.g. 9876543210">
+            <label>Your Email ID *</label>
+            <input type="email" id="reg-email" placeholder="e.g. yourname@gmail.com">
         </div>
 
         <div class="form-group">
@@ -236,12 +239,12 @@
     async function submitRegistration() {
         let name = document.getElementById('reg-name').value.trim();
         let role = document.getElementById('reg-role').value;
-        let phone = document.getElementById('reg-phone').value.trim();
+        let email = document.getElementById('reg-email').value.trim();
         let desc = document.getElementById('reg-desc').value.trim();
         let btn = document.getElementById('submit-btn');
 
-        if (name === '' || phone === '' || desc === '') {
-            alert('Please fill in your Name, Contact Number, and Details!');
+        if (name === '' || email === '' || desc === '') {
+            alert('Please fill in your Name, Email ID, and Details!');
             return;
         }
 
@@ -251,7 +254,7 @@
         const newProfile = {
             name: name,
             role: role,
-            phone: phone,
+            email: email,
             desc: desc,
             timestamp: Date.now()
         };
@@ -265,7 +268,7 @@
 
             // Clear Form
             document.getElementById('reg-name').value = '';
-            document.getElementById('reg-phone').value = '';
+            document.getElementById('reg-email').value = '';
             document.getElementById('reg-desc').value = '';
 
             alert('Welcome to CineCollab! Your profile is now live for everyone.');
@@ -297,8 +300,8 @@
             const profiles = Object.values(data).sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
 
             profiles.forEach(item => {
-                let cleanPhone = item.phone.replace(/[^0-9]/g, '');
-                let waPhone = cleanPhone.length === 10 ? '91' + cleanPhone : cleanPhone;
+                // Support both new email field and any old contact field
+                let contactEmail = item.email || item.phone || 'Not provided';
 
                 let card = document.createElement('div');
                 card.className = 'card';
@@ -312,10 +315,9 @@
                     <span class="role-badge">✨ ${escapeHTML(item.role)}</span>
                     <h3>${escapeHTML(item.name)}</h3>
                     <p>${escapeHTML(item.desc)}</p>
-                    <div class="contact-info">📞 Contact: ${escapeHTML(item.phone)}</div>
+                    <div class="contact-info">✉️ Email: ${escapeHTML(contactEmail)}</div>
                     <div class="btn-group">
-                        <a href="tel:${escapeHTML(cleanPhone)}" class="btn">Call Now</a>
-                        <a href="https://wa.me/${escapeHTML(waPhone)}" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                        <a href="mailto:${escapeHTML(contactEmail)}" class="btn">Send Email</a>
                     </div>
                 `;
                 projectList.appendChild(card);
