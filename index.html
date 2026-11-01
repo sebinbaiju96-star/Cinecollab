@@ -1,9 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="kWXeOryFcvuASwEVX7oAjUY_hHVCp6ucio3kPUiWNhs" />
+    <meta name="description" content="CineCollab - Connect with talented Malayalam Script Writers, Directors, Editors, Actors, and Cinematographers for your next film project.">
+    <meta name="keywords" content="CineCollab, Malayalam Cinema, Short Film Kerala, Script Writers, Directors, Actors, Editors, Filmmakers Hub">
     <title>CineCollab - Malayalam Cinema Talent Hub</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -214,11 +217,9 @@
 </div>
 
 <script>
-    // Your Firebase Realtime Database URL
     const DB_URL = "https://cinecollab-b8781-default-rtdb.firebaseio.com/profiles.json";
     let currentFilter = 'all';
 
-    // Open Registration Form
     function openRegistration() {
         document.getElementById('welcome-screen').style.display = 'none';
         document.getElementById('main-app').style.display = 'none';
@@ -226,7 +227,6 @@
         window.scrollTo(0, 0);
     }
 
-    // Show Main Page and Load Data
     function showMainApp() {
         document.getElementById('welcome-screen').style.display = 'none';
         document.getElementById('register-screen').style.display = 'none';
@@ -235,7 +235,6 @@
         loadProfiles();
     }
 
-    // Submit Details to Firebase Database
     async function submitRegistration() {
         let name = document.getElementById('reg-name').value.trim();
         let role = document.getElementById('reg-role').value;
@@ -266,7 +265,6 @@
                 body: JSON.stringify(newProfile)
             });
 
-            // Clear Form
             document.getElementById('reg-name').value = '';
             document.getElementById('reg-email').value = '';
             document.getElementById('reg-desc').value = '';
@@ -281,7 +279,6 @@
         }
     }
 
-    // Load All Profiles from Firebase Database
     async function loadProfiles() {
         let projectList = document.getElementById('project-list');
         projectList.innerHTML = '<div class="loading-text">Loading profiles...</div>';
@@ -296,11 +293,9 @@
                 return;
             }
 
-            // Convert object to array and sort newest first
             const profiles = Object.values(data).sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
 
             profiles.forEach(item => {
-                // Support both new email field and any old contact field
                 let contactEmail = item.email || item.phone || 'Not provided';
 
                 let card = document.createElement('div');
@@ -327,7 +322,6 @@
         }
     }
 
-    // Filter Function
     function filterSelection(category, e) {
         currentFilter = category;
         let cards = document.querySelectorAll('.card');
@@ -344,7 +338,6 @@
         });
     }
 
-    // Security helper to prevent HTML injection
     function escapeHTML(str) {
         if (!str) return '';
         return str.replace(/[&<>'"]/g, tag => ({
