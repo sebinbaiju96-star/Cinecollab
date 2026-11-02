@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +60,6 @@
             margin-bottom: 30px;
         }
 
-        /* സിനിമാറ്റിക് ഫോട്ടോകൾക്കായുള്ള സ്റ്റൈൽ (Attractive Images Section) */
         .banner-gallery {
             display: flex;
             gap: 10px;
@@ -197,11 +197,9 @@
         <p class="tagline">Connect with Writers, Directors, Actors & Technicians</p>
     </header>
 
-    <!-- പ്രൊഫൈലുകൾ രജിസ്റ്റർ ചെയ്യാനുള്ള ഫോം -->
     <div class="container">
         <h2>Join the Network</h2>
         
-        <!-- വെബ്സൈറ്റിന്റെ ഭംഗി കൂട്ടാൻ സിനിമാറ്റിക് ഫോട്ടോകൾ/ബാനറുകൾ -->
         <div class="banner-gallery">
             <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80" alt="Cinema Clapperboard">
             <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=600&q=80" alt="Film Projector">
@@ -238,7 +236,6 @@
         </form>
     </div>
 
-    <!-- പ്രൊഫൈലുകൾ കാണുന്ന ഫിൽട്ടറിംഗ് സെക്ഷൻ -->
     <div class="container">
         <h2>Explore Talents</h2>
         
@@ -251,12 +248,10 @@
         </div>
 
         <div id="profilesList">
-            <!-- Firebase ഡാറ്റ ഇവിടെ ലോഡ് ആകും -->
             <p style="text-align: center; color: #666;">Loading profiles...</p>
         </div>
     </div>
 
-    <!-- Firebase SDK കോഡുകൾ -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
@@ -342,5 +337,5 @@
     </script>
 </body>
 </html>
-
-        
+            
+       
